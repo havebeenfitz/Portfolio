@@ -28,5 +28,8 @@ class ViewController: UIViewController {
         let imageNumber = GKRandomSource.sharedRandom().nextInt(upperBound: 4)
         ballImage.image = images[imageNumber]
     }
+    func someFuncDoNoting() {
+        
+    }
 }
 
