@@ -81,8 +81,7 @@ class ViewController: UIViewController {
             
             restart()
         }
-            
-    
+
     }
     
     func restart() {
