@@ -48,111 +48,61 @@ class ViewController: UIViewController {
     // User presses one of the buttons
     @IBAction func buttonPressed(_ sender: UIButton) {
         
-        if storyIndex == 1 {
-            if sender.tag == 1  {
-                
-                storyTextView.text = story3
-                topButton.setTitle(answer3a, for: .normal)
-                bottomButton.setTitle(answer3b, for: .normal)
-                storyIndex += 1
-                
-            } else if sender.tag == 2  {
-                
-                storyTextView.text = story2
-                topButton.setTitle(answer2a, for: .normal)
-                bottomButton.setTitle(answer2b, for: .normal)
-                storyIndex += 1
-                
-            }
-        } else if storyIndex == 2 && storyTextView.text == story3 {
-            if sender.tag == 1 {
-                
-                storyTextView.text = story6
-                
-                topButton.isHidden = true
-                bottomButton.isHidden = true
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.restart()
-                }
-                
-                
-                //end
-                
-            } else if sender.tag == 2 {
-                storyTextView.text = story5
-                
-                topButton.isHidden = true
-                bottomButton.isHidden = true
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.restart()
-                }
-            }
-        } else if storyIndex == 2 && storyTextView.text == story2 {
+        if sender.tag == 1 && (storyIndex == 1 || storyIndex == 2) {
+            storyTextView.text = story3
+            topButton.setTitle(answer3a, for: .normal)
+            bottomButton.setTitle(answer3b, for: .normal)
+            storyIndex = 3
+        } else if sender.tag == 1 && storyIndex == 3 {
+            storyTextView.text = story6
             
-            if sender.tag == 1 {
-                
-                storyTextView.text = story3
-                topButton.setTitle(answer3a, for: .normal)
-                bottomButton.setTitle(answer3b, for: .normal)
-                storyIndex += 1
-                //end
-                
-            } else if sender.tag == 2 {
-                storyTextView.text = story4
-                
-                topButton.isHidden = true
-                bottomButton.isHidden = true
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.restart()
-                }
-                
-            }
+            topButton.isHidden = true
+            bottomButton.isHidden = true
             
-        } else if storyIndex == 3 {
-            if sender.tag == 1 {
-                
-                storyTextView.text = story6
-                
-                topButton.isHidden = true
-                bottomButton.isHidden = true
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.restart()
-                }
-            } else if sender.tag == 2 {
-                storyTextView.text = story5
-                
-                topButton.isHidden = true
-                bottomButton.isHidden = true
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.restart()
-                }
-            }
+            restart()
+            
+        } else if sender.tag == 2 && storyIndex == 3 {
+            storyTextView.text = story5
+            
+            topButton.isHidden = true
+            bottomButton.isHidden = true
+            
+            restart()
+        } else if sender.tag == 2 && storyIndex == 1 {
+            storyTextView.text = story2
+            topButton.setTitle(answer2a, for: .normal)
+            bottomButton.setTitle(answer2b, for: .normal)
+            storyIndex = 2
+        } else if sender.tag == 2 && storyIndex == 2 {
+            storyTextView.text = story4
+            
+            topButton.isHidden = true
+            bottomButton.isHidden = true
+            
+            restart()
         }
-       
-        
+            
     
     }
     
     func restart() {
         
-        let ac = UIAlertController(title: "The End", message: "Restart?", preferredStyle: .alert)
-        let okAlertButton = UIAlertAction(title: "Ok", style: .default)
-        ac.addAction(okAlertButton)
-        present(ac, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            let ac = UIAlertController(title: "The End", message: "Restart?", preferredStyle: .alert)
+            let okAlertButton = UIAlertAction(title: "Ok", style: .default)
+            ac.addAction(okAlertButton)
+            self.present(ac, animated: true)
+            
+            self.storyIndex = 1
+            
+            self.storyTextView.text = self.story1
+            self.topButton.setTitle(self.answer1a, for: .normal)
+            self.bottomButton.setTitle(self.answer1b, for: .normal)
+            
+            self.topButton.isHidden = false
+            self.bottomButton.isHidden = false
+        }
         
-        storyIndex = 1
-        
-        storyTextView.text = story1
-        topButton.setTitle(answer1a, for: .normal)
-        bottomButton.setTitle(answer1b, for: .normal)
-        
-        topButton.isHidden = false
-        bottomButton.isHidden = false
     }
 
 }
