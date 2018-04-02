@@ -5,6 +5,7 @@
 //  Created by Max Kraev
 
 import UIKit
+import PKHUD
 
 class ViewController: UIViewController {
     
@@ -61,7 +62,10 @@ class ViewController: UIViewController {
     func checkAnswer() {
         if pickedAnswer == allQuestions.list[questionNumber].answer {
             score += 1
+            HUD.flash(.success)
             updateUI()
+        } else {
+            HUD.flash(.error)
         }
     }
     
