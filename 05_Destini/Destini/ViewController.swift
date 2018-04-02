@@ -80,6 +80,7 @@ class ViewController: UIViewController {
             bottomButton.isHidden = true
             
             restart()
+            
         }
 
     }
