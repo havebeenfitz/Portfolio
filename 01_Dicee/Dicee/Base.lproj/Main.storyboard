@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,17 +14,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dicee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbackground" translatesAutoresizingMaskIntoConstraints="NO" id="Omw-rY-nBM">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mG8-uI-W4p" userLabel="Top Container">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="137.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="356"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="diceeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="suw-J7-kPC">
-                                        <rect key="frame" x="251" y="8" width="165" height="122"/>
+                                        <rect key="frame" x="105.66666666666669" y="117.33333333333331" width="165" height="122"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="165" id="IIS-Db-xoQ"/>
                                             <constraint firstAttribute="height" constant="122" id="fkd-3z-7Ta"/>
@@ -37,7 +37,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJM-b4-sWv" userLabel="Middle container">
-                                <rect key="frame" x="213.5" y="137.5" width="240" height="100"/>
+                                <rect key="frame" x="67.666666666666686" y="356" width="240" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="VzR-iM-W9M">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -64,10 +64,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBW-dA-9Ug" userLabel="Bottom container">
-                                <rect key="frame" x="0.0" y="238" width="667" height="137"/>
+                                <rect key="frame" x="0.0" y="456.66666666666674" width="375" height="321.33333333333326"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxq-2R-zpo">
-                                        <rect key="frame" x="258" y="44.5" width="150" height="49"/>
+                                        <rect key="frame" x="112.66666666666669" y="136.66666666666669" width="150" height="49"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="1dc-Rr-8iZ"/>
@@ -119,9 +119,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dice1" width="150" height="150"/>
-        <image name="dice5" width="150" height="150"/>
-        <image name="diceeLogo" width="147" height="96"/>
-        <image name="newbackground" width="333" height="311"/>
+        <image name="dice1" width="100" height="100"/>
+        <image name="dice5" width="100" height="100"/>
+        <image name="diceeLogo" width="196" height="128"/>
+        <image name="newbackground" width="444" height="414"/>
     </resources>
 </document>
