@@ -54,7 +54,10 @@ class ViewController: UIViewController {
             }
             ac.addAction(restartAction)
             
-            present(ac, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { 
+                self.present(ac, animated: true)
+            }
+            
         }
 
     }
