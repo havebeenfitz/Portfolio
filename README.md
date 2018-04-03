@@ -6,3 +6,4 @@
 4. Quizzler: MVC pattern, buttons, labels, progress bar, 3rd party libraries (Cocoa pods)
 5. Destini (sic!) app: If-else statements, buttons, views
 6. Calc: Autolayout stackview usage
+7. Clima Weather App: Alamofire, SwiftyJson, Progress HUD
