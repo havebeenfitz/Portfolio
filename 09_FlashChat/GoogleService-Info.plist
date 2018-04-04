@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1076501631903-sd1pfjk4rtdbejf3jsj7gjvp0d0pkefm.apps.googleusercontent.com</string>
+	<string>1076501631903-ov5gpfnfl7qi2qqs3vd4lfi4qmnebsi1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1076501631903-sd1pfjk4rtdbejf3jsj7gjvp0d0pkefm</string>
+	<string>com.googleusercontent.apps.1076501631903-ov5gpfnfl7qi2qqs3vd4lfi4qmnebsi1</string>
 	<key>API_KEY</key>
 	<string>AIzaSyATIEj7Uuv-MpgnKgSyzfd-urD-H0XqboE</string>
 	<key>GCM_SENDER_ID</key>
@@ -23,17 +23,17 @@
 	<key>STORAGE_BUCKET</key>
 	<string>flashchat-f5ed5.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1076501631903:ios:c3235f6e6a5ed1fe</string>
+	<string>1:1076501631903:ios:aa9a3cb280c1de4c</string>
 	<key>DATABASE_URL</key>
 	<string>https://flashchat-f5ed5.firebaseio.com</string>
 </dict>

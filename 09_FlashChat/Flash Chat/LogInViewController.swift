@@ -6,7 +6,8 @@
 
 
 import UIKit
-import GoogleSignIn
+import Firebase
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
 
@@ -26,9 +27,22 @@ class LogInViewController: UIViewController {
    
     @IBAction func logInPressed(_ sender: AnyObject) {
 
-        
-        //TODO: Log in the user
-        
+        Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
+            if error != nil {
+               
+                print(error!.localizedDescription)
+                let ac = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                ac.addAction(okAction)
+                self.present(ac, animated: true)
+                
+            } else {
+                
+                print(user!.email!)
+                self.performSegue(withIdentifier: "goToChat", sender: self)
+            
+            }
+        }
         
     }
     
