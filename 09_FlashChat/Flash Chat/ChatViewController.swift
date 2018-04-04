@@ -34,8 +34,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         messageTableView.delegate = self
         messageTableView.dataSource = self
-        messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         messageTextfield.delegate = self
+        
+        messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
         //MARK:- Gesture Recognizer
         
@@ -49,8 +50,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         messageTableView.separatorStyle = .none
         
-        //let indexPath = IndexPath(row: messageArray.count - 1, section: 0)
-        //messageTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
     }
     
     //MARK:- Table View setup
