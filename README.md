@@ -7,3 +7,5 @@
 5. __Destini__ (sic!) app: If-else statements, buttons, views
 6. __Calc__: Autolayout stackview usage
 7. __Clima__ Weather App: Alamofire, SwiftyJSON, Progress HUD
+8. __BitcoinTracker__ : Networking
+9. __FlashChat__: Firebase implementaition, networking, sign up, log in
