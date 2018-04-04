@@ -12,4 +12,3 @@ import CoreLocation
 func fahrenheitToCelcius(_ tempInFahrenheit: Double) -> Int {
     return Int((tempInFahrenheit - 32) * 0.555)
 }
-
