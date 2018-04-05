@@ -20,6 +20,8 @@
 ## __Calc__: 
 - Testing autolayout stackview
 
+![](https://github.com/havebeenfitz/Portfolio/blob/master/06_Calc/calcGif.gif)
+
 ## __Clima__ Weather App: 
 - Working with network and Core Location. Res: Alamofire, SwiftyJSON
 
