@@ -1,5 +1,4 @@
 # My portfolio
----------------
 
 ## __Dicee game__: 
 - Game with two dices and button. Res: GameplayKit, UIKit
