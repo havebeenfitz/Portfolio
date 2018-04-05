@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import ChameleonFramework
+import GoogleSignIn
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
@@ -183,7 +184,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.present(ac, animated: true)
         }
         
-        
+        if GIDSignIn.sharedInstance()?.currentUser?.userID != nil {
+            
+            GIDSignIn.sharedInstance().signOut()
+            
+        }
+    
     }
     
 
