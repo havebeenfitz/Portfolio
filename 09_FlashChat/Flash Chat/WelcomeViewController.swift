@@ -42,7 +42,8 @@ class WelcomeViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDel
         
         SVProgressHUD.show()
         if let error = error {
-            print(error)
+            print(error.localizedDescription)
+            SVProgressHUD.dismiss()
             return
         }
         
@@ -53,7 +54,8 @@ class WelcomeViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDel
         Auth.auth().signIn(with: credential) { (user, error) in
             
             if let error = error {
-                print(error)
+                print(error.localizedDescription)
+                SVProgressHUD.dismiss()
                 return
             }
             self.performSegue(withIdentifier: "goToChat", sender: self)
