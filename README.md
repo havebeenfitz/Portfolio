@@ -14,6 +14,8 @@
 - Testing autolayout stackview
 ## __Clima__ Weather App: 
 - Working with network and Core Location. Res: Alamofire, SwiftyJSON
+
+![](https://github.com/havebeenfitz/Portfolio/blob/master/07_Clima/climaGif.gif)
 ## __BitcoinTracker__ : 
 - Again with network: Res: Alamofire, SwiftyJSON
 ## __FlashChat__: 
