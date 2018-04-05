@@ -6,6 +6,8 @@
 ## __Magic8Ball game__: 
 - Gesture recognizer(on shake). Res: GameplayKit, UIKit
 
+![](https://github.com/havebeenfitz/Portfolio/blob/master/02_Magic8Ball/MagicBallImage.png)
+
 ## __Xylophone app__: 
 - Working with AVFoundation, sound player
 
