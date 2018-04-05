@@ -70,7 +70,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.avatarImageView.image = UIImage(named: "egg")
         
         if messageArray[indexPath.row].sender != Auth.auth().currentUser?.email {
-            cell.messageBackground.backgroundColor = UIColor.flatRedColorDark()
+            cell.messageBackground.backgroundColor = UIColor.flatNavyBlue()
             cell.avatarImageView.backgroundColor = UIColor.flatCoffee()
         } else {
             cell.messageBackground.backgroundColor = UIColor.flatGreen()
