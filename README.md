@@ -13,7 +13,7 @@
 ## __Calc__: 
 - Testing autolayout stackview
 ## __Clima__ Weather App: 
-- Working with network. Res: Alamofire, SwiftyJSON
+- Working with network and Core Location. Res: Alamofire, SwiftyJSON
 ## __BitcoinTracker__ : 
 - Again with network: Res: Alamofire, SwiftyJSON
 ## __FlashChat__: 
