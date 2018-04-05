@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic_8_Ball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="ball1" translatesAutoresizingMaskIntoConstraints="NO" id="b00-3b-xBS">
+                                <rect key="frame" x="47" y="175" width="281" height="497"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake me for an answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8r-EK-qMs">
+                                <rect key="frame" x="66" y="632" width="243" height="29"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Anything" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tq7-Al-1ar">
+                                <rect key="frame" x="123" y="75" width="129" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="rZN-Mg-cgq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i8r-EK-qMs" secondAttribute="bottom" constant="117" id="6jK-WA-Abg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b00-3b-xBS" secondAttribute="bottom" constant="106" id="AzD-sG-bco"/>
+                            <constraint firstItem="b00-3b-xBS" firstAttribute="centerX" secondItem="i8r-EK-qMs" secondAttribute="centerX" id="G4J-RF-evB"/>
+                            <constraint firstItem="tq7-Al-1ar" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="Hnk-OX-CAw"/>
+                            <constraint firstItem="b00-3b-xBS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TPL-pf-YCQ"/>
+                            <constraint firstItem="tq7-Al-1ar" firstAttribute="centerX" secondItem="i8r-EK-qMs" secondAttribute="centerX" id="ZcG-Mc-35f"/>
+                            <constraint firstItem="b00-3b-xBS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="131" id="uMK-Pu-qTP"/>
+                            <constraint firstItem="b00-3b-xBS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="wde-NY-O5b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ballImage" destination="b00-3b-xBS" id="vG0-Pc-SYv"/>
+                        <outlet property="labelDown" destination="i8r-EK-qMs" id="NeV-zU-17s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.28185907046478" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ball1" width="457" height="410"/>
+    </resources>
+</document>
