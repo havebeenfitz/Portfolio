@@ -18,3 +18,4 @@
 - Again with network: Res: Alamofire, SwiftyJSON
 ## __FlashChat__: 
 - The most advanced app so far. Whatsapp clone. Res: Firebase, Google Sign In, Chameleon framework, SVProgressHud. Working with cloud-based database
+![](https://github.com/havebeenfitz/Portfolio/blob/master/09_FlashChat/finishedApp.gif)
