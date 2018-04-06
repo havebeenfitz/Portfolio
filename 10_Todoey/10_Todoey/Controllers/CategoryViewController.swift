@@ -38,6 +38,18 @@ class CategoryViewController: UITableViewController {
     
     // MARK: - Table view delegates
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToItems", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TodoListViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCategory = categoryArray[indexPath.row]
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
@@ -56,7 +68,7 @@ class CategoryViewController: UITableViewController {
         do {
             try context.save()
         } catch {
-            print("Error saving context \(error)")
+            print("Error saving category \(error)")
         }
         
     }
@@ -65,7 +77,7 @@ class CategoryViewController: UITableViewController {
         do {
             categoryArray = try context.fetch(request)
         } catch {
-            print("Cannot Fetch \(error)")
+            print("Cannot Fetch categories \(error)")
         }
         tableView.reloadData()
     }

@@ -96,9 +96,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="j66-lO-X6x" kind="show" id="PV4-6C-Wxh"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -113,6 +110,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="j66-lO-X6x" kind="show" identifier="goToItems" id="OqG-yU-efI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7y-Lz-2G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
