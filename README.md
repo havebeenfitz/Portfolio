@@ -36,3 +36,6 @@
 - The most advanced app so far. Whatsapp clone. Res: Firebase, Google Sign In, Chameleon framework, SVProgressHud. Working with cloud-based database, custom cells (XIB files), delegates.
 
 ![](https://github.com/havebeenfitz/Portfolio/blob/master/09_FlashChat/finishedApp.gif)
+
+## __Todoey__: 
+- Todo app. You are able to switch between categories, check and delete completed to dos. plist, NSCoder and Core Data implementaition
