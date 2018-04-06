@@ -22,7 +22,7 @@
 		B242283F3D51178654E5801E /* Pods-10_Todoey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-10_Todoey.release.xcconfig"; path = "Pods/Target Support Files/Pods-10_Todoey/Pods-10_Todoey.release.xcconfig"; sourceTree = "<group>"; };
 		E403BECE643183F0C1D593DC /* Pods-10_Todoey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-10_Todoey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-10_Todoey/Pods-10_Todoey.debug.xcconfig"; sourceTree = "<group>"; };
 		E406DA1320769B3100CFD4AC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		E43E536220764D48007F2514 /* 10_Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 10_Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E43E536220764D48007F2514 /* 11_TodoeyRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 11_TodoeyRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43E536520764D48007F2514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E43E536A20764D48007F2514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E43E536C20764D4A007F2514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		E43E536320764D48007F2514 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E43E536220764D48007F2514 /* 10_Todoey.app */,
+				E43E536220764D48007F2514 /* 11_TodoeyRealm.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,9 +129,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E43E536120764D48007F2514 /* 10_Todoey */ = {
+		E43E536120764D48007F2514 /* 11_TodoeyRealm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E43E537420764D4A007F2514 /* Build configuration list for PBXNativeTarget "10_Todoey" */;
+			buildConfigurationList = E43E537420764D4A007F2514 /* Build configuration list for PBXNativeTarget "11_TodoeyRealm" */;
 			buildPhases = (
 				E97B50046F1364CF22A8D277 /* [CP] Check Pods Manifest.lock */,
 				E43E535E20764D48007F2514 /* Sources */,
@@ -143,9 +143,9 @@
 			);
 			dependencies = (
 			);
-			name = 10_Todoey;
+			name = 11_TodoeyRealm;
 			productName = 10_Todoey;
-			productReference = E43E536220764D48007F2514 /* 10_Todoey.app */;
+			productReference = E43E536220764D48007F2514 /* 11_TodoeyRealm.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -163,7 +163,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E43E535D20764D48007F2514 /* Build configuration list for PBXProject "10_Todoey" */;
+			buildConfigurationList = E43E535D20764D48007F2514 /* Build configuration list for PBXProject "11_TodoeyRealm" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -176,7 +176,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E43E536120764D48007F2514 /* 10_Todoey */,
+				E43E536120764D48007F2514 /* 11_TodoeyRealm */,
 			);
 		};
 /* End PBXProject section */
@@ -396,7 +396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.setmysails.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.setmysails.TodoeyRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -416,7 +416,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.setmysails.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.setmysails.TodoeyRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -426,7 +426,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E43E535D20764D48007F2514 /* Build configuration list for PBXProject "10_Todoey" */ = {
+		E43E535D20764D48007F2514 /* Build configuration list for PBXProject "11_TodoeyRealm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E43E537220764D4A007F2514 /* Debug */,
@@ -435,7 +435,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E43E537420764D4A007F2514 /* Build configuration list for PBXNativeTarget "10_Todoey" */ = {
+		E43E537420764D4A007F2514 /* Build configuration list for PBXNativeTarget "11_TodoeyRealm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E43E537520764D4A007F2514 /* Debug */,
