@@ -78,7 +78,45 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1452" y="121.88905547226388"/>
+            <point key="canvasLocation" x="2167" y="122"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="0yo-PG-Wt3">
+            <objects>
+                <tableViewController id="7CV-DQ-ub2" customClass="CategoryViewController" customModule="_0_Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LgZ-fP-bg0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryCell" id="xkD-F6-VdI">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xkD-F6-VdI" id="BV0-mb-e48">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="j66-lO-X6x" kind="show" id="PV4-6C-Wxh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7CV-DQ-ub2" id="Ne1-ve-7YU"/>
+                            <outlet property="delegate" destination="7CV-DQ-ub2" id="5fh-bJ-bmD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Categories" id="c88-bg-6eH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="j2H-wT-Jpn">
+                            <connections>
+                                <action selector="addCategoryPressd:" destination="7CV-DQ-ub2" id="g3T-B0-D4J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7y-Lz-2G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1398" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CWZ-cm-BeI">
@@ -91,7 +129,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="j66-lO-X6x" kind="relationship" relationship="rootViewController" id="AM3-SB-tLd"/>
+                        <segue destination="7CV-DQ-ub2" kind="relationship" relationship="rootViewController" id="upz-6L-DgV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HV5-h0-tap" userLabel="First Responder" sceneMemberID="firstResponder"/>
