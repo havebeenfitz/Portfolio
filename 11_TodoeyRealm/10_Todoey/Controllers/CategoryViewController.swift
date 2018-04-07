@@ -7,11 +7,13 @@
 //
 
 import UIKit
-import CoreData
 import RealmSwift
+import SwipeCellKit
+import ChameleonFramework
 
-class CategoryViewController: UITableViewController {
-    
+
+class CategoryViewController: SwipeTableViewController {
+
     let realm = try! Realm()
     
     var categoryArray: Results<Category>?
@@ -19,7 +21,10 @@ class CategoryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCategories()
+        
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -32,9 +37,17 @@ class CategoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-        cell.textLabel?.text = categoryArray?[indexPath.row].name ?? "No Categories Added"
         
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
+        if let category = categoryArray?[indexPath.row] {
+            cell.textLabel?.text = category.name
+            cell.backgroundColor = UIColor(hexString: category.color)
+            cell.textLabel?.textColor = UIColor(contrastingBlackOrWhiteColorOn: cell.backgroundColor, isFlat: true)
+            
+            
+        }
+
         return cell
     }
     
@@ -42,6 +55,8 @@ class CategoryViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToItems", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.reloadRows(at: <#T##[IndexPath]#>, with: <#T##UITableViewRowAnimation#>)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,27 +67,16 @@ class CategoryViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-            if let category = categoryArray?[indexPath.row] {
-                do {
-                    try realm.write {
-                        realm.delete(category)
-                    }
-                } catch {
-                    print("Error deleting Category \(error)")
-                }
-            }
-            
-            
-            tableView.deleteRows(at: [indexPath], with: .left)
-            tableView.reloadData()
-        }
+    
+    // MARK: - Swipe View Delegates
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        return super.tableView(tableView, editActionsForRowAt: indexPath, for: .right)
     }
     
+
     
-    // MARK: - Saving and Loading from Core Data
+    // MARK: - Saving and Loading from Realm
     
     func save(category: Category) {
         do {
@@ -89,7 +93,23 @@ class CategoryViewController: UITableViewController {
         categoryArray = realm.objects(Category.self)
         tableView.reloadData()
     }
-
+    
+    //MARK: - Delete categories
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let category = self.categoryArray?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    let selectedItems = category.items
+                    self.realm.delete(selectedItems)
+                    self.realm.delete(category)
+                    
+                }
+            } catch {
+                print("Error deleting Category \(error)")
+            }
+        }
+    }
     // MARK: - IB Actions
     
     
@@ -106,6 +126,7 @@ class CategoryViewController: UITableViewController {
             if textField.text != "" {
                 let newCategory = Category()
                 newCategory.name = textField.text!
+                newCategory.color = UIColor.randomFlat().hexValue()
                 
                 self.save(category: newCategory)
                 
@@ -125,7 +146,4 @@ class CategoryViewController: UITableViewController {
         present(ac, animated: true)
         
     }
-    
-    
-    
 }

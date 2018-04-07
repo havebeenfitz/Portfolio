@@ -8,12 +8,12 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
+import ChameleonFramework
 
-class TodoListViewController: UITableViewController  {
+class TodoListViewController: SwipeTableViewController  {
     
     let realm = try! Realm()
-    
-    
     var toDoItems: Results<ToDoItem>?
     var selectedCategory: Category? {
         didSet {
@@ -21,9 +21,41 @@ class TodoListViewController: UITableViewController  {
         }
     }
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        title = selectedCategory?.name
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let category = selectedCategory {
+            guard let navBar = navigationController?.navigationBar else { fatalError("No navigation controller") }
+            navBar.barTintColor = UIColor(hexString: category.color)
+            navBar.tintColor = UIColor(contrastingBlackOrWhiteColorOn: UIColor(hexString: category.color), isFlat: true)
+            
+            if #available(iOS 11.0, *) {
+                navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(contrastingBlackOrWhiteColorOn: UIColor(hexString: category.color), isFlat: true)]
+            } else {
+                // Fallback on earlier versions
+                navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(contrastingBlackOrWhiteColorOn: UIColor(hexString: category.color), isFlat: true)]
+            }
+            searchBar.barTintColor = UIColor(hexString: category.color)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        guard let navBar = navigationController?.navigationBar else { fatalError("No navigation controller") }
+        navBar.barTintColor = UIColor.flatBlackColorDark()
+        
+        if #available(iOS 11.0, *) {
+            navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatWhite()]
+        } else {
+            // Fallback on earlier versions
+            navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatWhite()]
+        }
     }
     
     // MARK: - Table view data source
@@ -35,15 +67,23 @@ class TodoListViewController: UITableViewController  {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
 
         if let item = toDoItems?[indexPath.row] {
+            
             cell.textLabel?.text = toDoItems?[indexPath.row].title
             cell.detailTextLabel?.text = toDoItems?[indexPath.row].subTitle
             cell.accessoryType = item.done ? .checkmark : .none
+            
+            let gradientPercentage = CGFloat(CGFloat(indexPath.row) / CGFloat((toDoItems!.count)))
+            
+            cell.backgroundColor = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage: gradientPercentage)
+            cell.textLabel?.textColor = UIColor(contrastingBlackOrWhiteColorOn: cell.backgroundColor, isFlat: true)
+            cell.detailTextLabel?.textColor = UIColor(contrastingBlackOrWhiteColorOn: cell.backgroundColor, isFlat: true)
         } else {
             cell.textLabel?.text = "No Items Added"
         }
+        
         
         return cell
     }
@@ -67,28 +107,13 @@ class TodoListViewController: UITableViewController  {
         tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         
     }
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return toDoItems?[indexPath.row].done ?? false
-    }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            if let item = toDoItems?[indexPath.row] {
-                do {
-                    try realm.write {
-                        realm.delete(item)
-                    }
-                    
-                } catch {
-                    print("error deleting Item \(error)")
-                }
-            }
-            
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.reloadData()
-        }
+    // MARK: - Swipe Cell Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        return super.tableView(tableView, editActionsForRowAt: indexPath, for: .right)
     }
+
     
     // MARK: - Add Items
     
@@ -115,8 +140,9 @@ class TodoListViewController: UITableViewController  {
                             
                             newItem.title = textField.text!
                             newItem.subTitle = formatter.string(from: Date())
-                            
                             newItem.dateCreated = Date()
+                            //newItem.color = currentCategory.color
+                            
                             currentCategory.items.append(newItem)
                         }
                     } catch {
@@ -133,8 +159,10 @@ class TodoListViewController: UITableViewController  {
                 self.present(ac, animated: true)
             }
         }
-
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         ac.addAction(addItem)
+        ac.addAction(cancel)
+        
         present(ac, animated: true)
 
     }
@@ -146,6 +174,23 @@ class TodoListViewController: UITableViewController  {
         toDoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
         tableView.reloadData()
     }
+    
+    // MARK: - Delete Items
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let item = self.toDoItems?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(item)
+                }
+                
+            } catch {
+                print("error deleting Item \(error)")
+            }
+        }
+    }
+    
+    
 }
 
 // MARK: - Search Bar Delegate Methods
@@ -171,4 +216,3 @@ extension TodoListViewController: UISearchBarDelegate {
     }
 
 }
-
