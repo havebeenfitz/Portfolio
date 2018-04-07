@@ -25,7 +25,7 @@ class TodoListViewController: SwipeTableViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
         title = selectedCategory?.name
     }
     
@@ -48,13 +48,13 @@ class TodoListViewController: SwipeTableViewController  {
     override func viewWillDisappear(_ animated: Bool) {
         
         guard let navBar = navigationController?.navigationBar else { fatalError("No navigation controller") }
-        navBar.barTintColor = UIColor.flatBlackColorDark()
+        navBar.barTintColor = UIColor.flatWhite()
         
         if #available(iOS 11.0, *) {
-            navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatWhite()]
+            navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatBlackColorDark()]
         } else {
             // Fallback on earlier versions
-            navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatWhite()]
+            navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatBlackColorDark()]
         }
     }
     

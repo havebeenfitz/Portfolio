@@ -24,6 +24,16 @@ class CategoryViewController: SwipeTableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = UIColor.flatWhite()
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatBlackColorDark()]
+        } else {
+            // Fallback on earlier versions
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatBlackColorDark()]
+        }
+    }
+    
     
 
     // MARK: - Table view data source
