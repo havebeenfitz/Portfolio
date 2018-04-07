@@ -32,6 +32,7 @@ class CategoryViewController: SwipeTableViewController {
             // Fallback on earlier versions
             navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatBlackColorDark()]
         }
+        navigationController?.navigationBar.tintColor = UIColor.flatBlackColorDark()
     }
     
     
