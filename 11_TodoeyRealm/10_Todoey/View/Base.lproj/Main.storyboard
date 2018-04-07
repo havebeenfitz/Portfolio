@@ -108,7 +108,7 @@
                     <navigationItem key="navigationItem" title="Categories" id="c88-bg-6eH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j2H-wT-Jpn">
                             <connections>
-                                <action selector="addCategoryPressd:" destination="7CV-DQ-ub2" id="g3T-B0-D4J"/>
+                                <action selector="addCategoryPressed:" destination="7CV-DQ-ub2" id="g3T-B0-D4J"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

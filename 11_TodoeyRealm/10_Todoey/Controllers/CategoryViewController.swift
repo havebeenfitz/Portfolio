@@ -89,7 +89,7 @@ class CategoryViewController: SwipeTableViewController {
     }
 
     func loadCategories() {
-        categoryArray = realm.objects(Category.self)
+        categoryArray = realm.objects(Category.self).sorted(byKeyPath: "dateCreated", ascending: true)
         tableView.reloadData()
     }
     
@@ -102,7 +102,6 @@ class CategoryViewController: SwipeTableViewController {
                     let selectedItems = category.items
                     self.realm.delete(selectedItems)
                     self.realm.delete(category)
-                    
                 }
             } catch {
                 print("Error deleting Category \(error)")
@@ -112,7 +111,7 @@ class CategoryViewController: SwipeTableViewController {
     // MARK: - IB Actions
     
     
-    @IBAction func addCategoryPressd(_ sender: UIBarButtonItem) {
+    @IBAction func addCategoryPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
         
         let ac = UIAlertController(title: "Add Category", message: nil, preferredStyle: .alert)
@@ -126,6 +125,7 @@ class CategoryViewController: SwipeTableViewController {
                 let newCategory = Category()
                 newCategory.name = textField.text!
                 newCategory.color = UIColor.randomFlat().hexValue()
+                newCategory.dateCreated = Date()
                 
                 self.save(category: newCategory)
                 

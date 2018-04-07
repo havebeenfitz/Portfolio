@@ -112,6 +112,7 @@ class TodoListViewController: SwipeTableViewController  {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         return super.tableView(tableView, editActionsForRowAt: indexPath, for: .right)
+        
     }
 
     
@@ -141,7 +142,6 @@ class TodoListViewController: SwipeTableViewController  {
                             newItem.title = textField.text!
                             newItem.subTitle = formatter.string(from: Date())
                             newItem.dateCreated = Date()
-                            //newItem.color = currentCategory.color
                             
                             currentCategory.items.append(newItem)
                         }
@@ -171,7 +171,7 @@ class TodoListViewController: SwipeTableViewController  {
     
     func loadItems() {
         
-        toDoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        toDoItems = selectedCategory?.items.sorted(byKeyPath: "dateCreated", ascending: true)
         tableView.reloadData()
     }
     
