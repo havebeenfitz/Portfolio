@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todoey-->
+        <!--Items-->
         <scene sceneID="aZp-nQ-SUa">
             <objects>
-                <tableViewController id="j66-lO-X6x" customClass="TodoListViewController" customModule="_0_Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="j66-lO-X6x" customClass="TodoListViewController" customModule="_1_TodoeyRealm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aAa-xa-T6m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
                             <outlet property="delegate" destination="j66-lO-X6x" id="gb3-Ae-whD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoey" id="O1I-5b-UWa">
+                    <navigationItem key="navigationItem" title="Items" id="O1I-5b-UWa">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gtK-Cw-SJ3">
                             <connections>
                                 <action selector="addItemPressed:" destination="j66-lO-X6x" id="wfG-sJ-j7f"/>
@@ -83,7 +83,7 @@
         <!--Categories-->
         <scene sceneID="0yo-PG-Wt3">
             <objects>
-                <tableViewController id="7CV-DQ-ub2" customClass="CategoryViewController" customModule="_0_Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7CV-DQ-ub2" customClass="CategoryViewController" customModule="_1_TodoeyRealm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LgZ-fP-bg0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
