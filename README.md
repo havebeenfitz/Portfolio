@@ -39,3 +39,5 @@
 
 ## __Todoey__: 
 - Todo app. You are able to switch between categories, check and delete completed to dos. plist, NSCoder and Core Data implementaition
+
+![](https://github.com/havebeenfitz/Portfolio/blob/master/11_TodoeyRealm/todoeyGif.gif)
