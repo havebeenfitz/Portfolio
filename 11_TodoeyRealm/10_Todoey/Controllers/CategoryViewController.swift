@@ -56,7 +56,7 @@ class CategoryViewController: SwipeTableViewController {
             cell.backgroundColor = UIColor(hexString: category.color)
             cell.textLabel?.textColor = UIColor(contrastingBlackOrWhiteColorOn: cell.backgroundColor, isFlat: true)
             
-            
+            cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "Disclosure"))
         }
 
         return cell
