@@ -34,6 +34,7 @@ class TodoListViewController: SwipeTableViewController  {
             guard let navBar = navigationController?.navigationBar else { fatalError("No navigation controller") }
             navBar.barTintColor = UIColor(hexString: category.color)
             navBar.tintColor = UIColor(contrastingBlackOrWhiteColorOn: UIColor(hexString: category.color), isFlat: true)
+            navBar.clipsToBounds = true
             
             if #available(iOS 11.0, *) {
                 navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(contrastingBlackOrWhiteColorOn: UIColor(hexString: category.color), isFlat: true)]
@@ -42,6 +43,9 @@ class TodoListViewController: SwipeTableViewController  {
                 navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(contrastingBlackOrWhiteColorOn: UIColor(hexString: category.color), isFlat: true)]
             }
             searchBar.barTintColor = UIColor(hexString: category.color)
+            searchBar.clipsToBounds = true
+            searchBar.keyboardAppearance = .dark
+            
         }
     }
     
@@ -75,9 +79,11 @@ class TodoListViewController: SwipeTableViewController  {
             cell.detailTextLabel?.text = toDoItems?[indexPath.row].subTitle
             cell.accessoryType = item.done ? .checkmark : .none
             
+            
             let gradientPercentage = CGFloat(CGFloat(indexPath.row) / CGFloat((toDoItems!.count)))
             
             cell.backgroundColor = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage: gradientPercentage)
+            cell.tintColor = UIColor(contrastingBlackOrWhiteColorOn: cell.backgroundColor, isFlat: true)
             cell.textLabel?.textColor = UIColor(contrastingBlackOrWhiteColorOn: cell.backgroundColor, isFlat: true)
             cell.detailTextLabel?.textColor = UIColor(contrastingBlackOrWhiteColorOn: cell.backgroundColor, isFlat: true)
         } else {

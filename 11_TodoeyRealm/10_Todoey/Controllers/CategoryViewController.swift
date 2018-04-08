@@ -22,6 +22,7 @@ class CategoryViewController: SwipeTableViewController {
         super.viewDidLoad()
         loadCategories()
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +34,7 @@ class CategoryViewController: SwipeTableViewController {
             navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.flatBlackColorDark()]
         }
         navigationController?.navigationBar.tintColor = UIColor.flatBlackColorDark()
+        navigationController?.navigationBar.clipsToBounds = true
     }
     
     
@@ -54,6 +56,8 @@ class CategoryViewController: SwipeTableViewController {
         if let category = categoryArray?[indexPath.row] {
             cell.textLabel?.text = category.name
             cell.backgroundColor = UIColor(hexString: category.color)
+            //cell.tintColor = UIColor(contrastingBlackOrWhiteColorOn: cell.backgroundColor, isFlat: true)
+            cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "Disclosure"))
             cell.textLabel?.textColor = UIColor(contrastingBlackOrWhiteColorOn: cell.backgroundColor, isFlat: true)
             
             cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "Disclosure"))

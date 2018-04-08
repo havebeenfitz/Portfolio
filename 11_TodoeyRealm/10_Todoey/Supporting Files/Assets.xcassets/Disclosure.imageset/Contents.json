@@ -6,11 +6,18 @@
     },
     {
       "idiom" : "universal",
+<<<<<<< HEAD
+=======
+      "filename" : "Disclosure.png",
+>>>>>>> master
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+<<<<<<< HEAD
       "filename" : "Disclosure.png",
+=======
+>>>>>>> master
       "scale" : "3x"
     }
   ],
